@@ -1,22 +1,13 @@
 {
   "name": "audio-logger",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "frontend": "cd frontend && npm start",
     "backend": "cd backend && nodemon server.js",
-    "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
-    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install"
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\""
   },
   "dependencies": {
-    "@emotion/react": "^11.11.3",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.15.1",
-    "@mui/x-date-pickers": "^6.18.5",
-    "axios": "^1.6.2",
-    "date-fns": "^2.30.0",
-    "concurrently": "^9.1.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.9"
+    "concurrently": "^8.2.2"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "audio-logger",
+  "version": "1.0.0",
+  "scripts": {
+    "frontend": "cd frontend && npm start",
+    "backend": "cd backend && node server.js",
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
