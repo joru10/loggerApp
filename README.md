@@ -1,48 +1,21 @@
 # Audio Logger
 
-A web application that records audio and provides real-time speech-to-text transcription with intelligent activity tracking and report generation.
-
-## Features
-
-- Audio recording with real-time transcription
-- Speech-to-text conversion using Web Speech API
-- Intelligent activity identification from transcripts using LLM
-- Automated report generation:
-  - Per-recording activity analysis
-  - Daily activity summaries
-  - Monthly consolidated reports (planned)
-- Material-UI interface
-- Real-time transcript display
-- Audio file generation (WebM format)
-
-## Tech Stack
-
-- React.js
-- Material-UI
-- Web Speech API
-- MediaRecorder API
-- LLM Integration for activity analysis
-- Node.js backend for report processing
+A web application for recording and transcribing audio notes with activity tracking.
 
 ## Prerequisites
 
-- Node.js (v14 or higher)
-- Modern web browser with Web Speech API support (Chrome recommended)
-- Microphone access
-- API key for LLM service
+- Node.js (v18 or higher)
+- MongoDB
+- npm or yarn
 
 ## Installation
 
-1. Clone the repository:
-\`\`\`bash
-git clone https://github.com/joru10/loggerApp.git
-cd loggerApp
-\`\`\`
-
-2. Install dependencies:
-\`\`\`bash
-npm install
-\`\`\`
+1. Clone the repository
+2. Install dependencies for both frontend and backend:
+```bash
+cd frontend && npm install
+cd ../backend && npm install
+```
 
 3. Configure environment variables:
    - Create a \`.env\` file
@@ -56,30 +29,49 @@ npm start
 
 ## Usage
 
-1. Click the "Start Recording" button to begin recording
-2. Speak into your microphone to log your activities
-3. View real-time transcription as you speak
-4. Click "Stop Recording" to finish
-5. The recording and transcript will be processed:
+1. Configure Activity Categories:
+   - Access the configuration panel
+   - Create custom categories for your activities
+   - Add relevant keywords for each category
+   - Set category colors for reports
+
+2. Record Activities:
+   - Click the "Start Recording" button
+   - Speak into your microphone to log your activities
+   - Mention times and durations for better tracking
+   - View real-time transcription as you speak
+   - Click "Stop Recording" to finish
+
+3. Activity Processing:
    - Audio and transcript are saved
    - LLM analyzes the transcript for activities
-   - Activities are stored for daily report generation
+   - Activities are automatically categorized
+   - Times and durations are extracted or defaulted
+   - Activities are stored for reporting
 
 ## Report Generation
 
 ### Per-Recording Analysis
 - Each recording is analyzed to identify specific activities
-- Activities are categorized and stored for aggregation
+- Activities are automatically categorized based on content
+- Time tracking with smart defaults:
+  - Explicit times are extracted when mentioned
+  - Default 15-minute duration when unspecified
+  - Recording timestamp used for undefined start times
 
 ### Daily Reports
 - End-of-day consolidation of all recorded activities
-- Intelligent summarization of daily accomplishments
-- Activity categorization and time tracking
+- Activities grouped by category
+- Time-based analysis of daily work
+- Intelligent summarization of accomplishments
+- Category-based time tracking
 
-### Monthly Reports (Planned)
+### Monthly Reports
 - Monthly activity patterns and trends
-- Productivity analysis
+- Category-based aggregation
 - Time allocation insights
+- Productivity analysis by category
+- Visual representations of time distribution
 
 ## Browser Support
 
